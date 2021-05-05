@@ -56,7 +56,7 @@ while True:
     students = open("schools/"+schoolname+"/"+schoolname+"-students.txt","x")
     students.close()
     log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
-    log0001 = str(f"School{schoolname}has was created at {localtime} EST;")
+    log0001 = str(f"School {schoolname} has was created at {localtime} EST;")
     log.write(log0001)
     log.write("\n")
     log.close()
