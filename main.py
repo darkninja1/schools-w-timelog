@@ -26,18 +26,22 @@ while True:
       if schoolview == "y":
         while True:
           pass2 = input("Enter School Administrator password - ")
-          user1 = schools.index(schoolname+"\n")
-          pass1 = password.index(pass2+"\n")
-          if (user1 == pass1):
-            log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
-            log0002 = str(f"School {schoolname} has been accessed at {localtime} EST;")
-            log.write(log0002)
-            log.write("\n")
-            log.close()
-            break
+          if (pass2 in password):
+            user1 = schools.index(schoolname+"\n")
+            pass1 = password.index(pass2+"\n")
+            if (user1 == pass1):
+              log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
+              log0002 = str(f"School {schoolname} has been accessed at {localtime} EST;")
+              log.write(log0002)
+              log.write("\n")
+              log.close()
+              break
+            else:
+              print("\nInvalid Password\n")
+              sys.exit()  
           else:
             print("\nInvalid Password\n")
-            sys.exit()   
+            sys.exit()     
         break
       elif schoolview == "n":
         print("ok exiting school menu...")
