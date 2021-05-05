@@ -192,8 +192,7 @@ class School():
           print("\nThanks for your visit and support. Bye.")
       else:
           print("\nI didn't understand that choice.\n")
-          #time.sleep(5)
-          #display_title_bar()
+          
 
 
 School()
@@ -208,16 +207,4 @@ School()
 
 
 
-
-#Step1: Get user input
-#Step2: Check if user input is in people.txt
-#Step3: If yes, print "Welcome back to school you little demon"
-#Step4: If no, append to the file and print "Welcome to hell new kid."
-#Step5: Should we have a menu?
-#If so Option1: see the list, Option2: Add a name, Option3 quit
-#Thumbsup from Dom: file handling
-#Thumbsup from Cedar: 
-#it looks nice, 1] See a list of students.[2] Tell me about someone new. [q] Quit.
-#How do I make this into a class?
-#Do I need more than one py files?
 
