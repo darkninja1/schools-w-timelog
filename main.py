@@ -1,20 +1,19 @@
-# doms stuff
+# doms school machine with log
+#  #works#isgood#tryit
 import os
 import sys
 import time
 import datetime
 import pytz
 localtime = datetime.datetime.now(pytz.timezone('US/Eastern'))
-#agenda
-#1. add log file for every school
-#2. add folders for every school!!!
+
 print(localtime,"EST")
 
       
 while True:
   localtime = datetime.datetime.now(pytz.timezone('US/Eastern'))
   schools = open("schools.txt").readlines()
-  
+  password = open("password.txt").readlines()
   global schoolname
   #why global
   schoolname = input("What is the name of the school?: ").lower()
@@ -25,12 +24,20 @@ while True:
     while True:
       schoolview = input("[y/n]?: ")
       if schoolview == "y":
-        #print(f"You are now viewing {schoolname}")
-        log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
-        log0002 = str(f"School {schoolname} has been accessed at {localtime} EST;")
-        log.write(log0002)
-        log.write("\n")
-        log.close()
+        while True:
+          pass2 = input("Enter School Administrator password - ")
+          user1 = schools.index(schoolname+"\n")
+          pass1 = password.index(pass2+"\n")
+          if (user1 == pass1):
+            log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
+            log0002 = str(f"School {schoolname} has been accessed at {localtime} EST;")
+            log.write(log0002)
+            log.write("\n")
+            log.close()
+            break
+          else:
+            print("\nInvalid Password\n")
+            sys.exit()   
         break
       elif schoolview == "n":
         print("ok exiting school menu...")
@@ -43,8 +50,14 @@ while True:
   else: 
     #directory
     os.mkdir("schools/"+schoolname)
+    password123 = input("Please add an administartor password - ")
+    pass123 = open("password.txt","a")
+    pass123.write(password123)
+    pass123.write("\n")
+    pass123.close()
     #new school
     schools1 = open("schools.txt","a")
+    
     #append
     schools1.write(schoolname)
     schools1.write("\n")
