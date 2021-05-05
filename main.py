@@ -10,9 +10,9 @@ localtime = datetime.datetime.now(pytz.timezone('US/Eastern'))
 #2. add folders for every school!!!
 print(localtime,"EST")
 
-
       
 while True:
+  localtime = datetime.datetime.now(pytz.timezone('US/Eastern'))
   schools = open("schools.txt").readlines()
   
   global schoolname
@@ -26,8 +26,9 @@ while True:
       schoolview = input("[y/n]?: ")
       if schoolview == "y":
         #print(f"You are now viewing {schoolname}")
-        log = open("schools/"+schoolname+"-log.txt","a")
-        log.write("School",schoolname,"has been accessed at",localtime,"EST;")
+        log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
+        log0002 = str(f"School {schoolname} has been accessed at {localtime} EST;")
+        log.write(log0002)
         log.write("\n")
         log.close()
         break
@@ -39,20 +40,24 @@ while True:
         
             
 
-  else: #new school
+  else: 
+    #directory
+    os.mkdir("schools/"+schoolname)
+    #new school
     schools1 = open("schools.txt","a")
     #append
     schools1.write(schoolname)
     schools1.write("\n")
     schools1.close()   
-    school = open("schools/"+schoolname+".txt","x")
+    school = open("schools/"+schoolname+"/"+schoolname+".txt","x")
     school.close()
-    teachers = open("schools/"+schoolname+"-teachers.txt","x")
+    teachers = open("schools/"+schoolname+"/"+schoolname+"-teachers.txt","x")
     teachers.close()
-    students = open("schools/"+schoolname+"-students.txt","x")
+    students = open("schools/"+schoolname+"/"+schoolname+"-students.txt","x")
     students.close()
-    log = open("schools/"+schoolname+"-log.txt","a")
-    log.write("School",schoolname,"has was created at",localtime,"EST;")
+    log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
+    log0001 = str(f"School{schoolname}has was created at {localtime} EST;")
+    log.write(log0001)
     log.write("\n")
     log.close()
     print("\n...School Generated...\n")
@@ -102,29 +107,31 @@ class School():
       if new_name + "\n" in schoolname:
           print(f"\n%s is already in the {schoolname} database." % new_name.title())
       else:
-          file = open("schools/"+schoolname+".txt","a")
+          file = open("schools/"+schoolname+"/"+schoolname+".txt","a")
           file.write(new_name)
           file.write("\n")
           file.close()
           while True:
             profession = input(f"Is {new_name} a student or a teacher?: ")
             if profession == "teacher":
-              teach = open("schools/"+schoolname+"-teachers.txt","a")
+              teach = open("schools/"+schoolname+"/"+schoolname+"-teachers.txt","a")
               teach.write(new_name)
               teach.write("\n")
               teach.close()
-              log = open("schools/"+schoolname+"-log.txt","a")
-              log.write("Teacher",new_name,"has been added to the system at:",localtime,"EST;")
+              log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
+              log0003 = str(f"Teacher ({new_name}) has been added to the system at: {localtime} EST;")
+              log.write(log0003)
               log.write("\n")
               log.close()
               break
             elif profession == "student":
-              student = open("schools/"+schoolname+"-students.txt","a")
+              student = open("schools/"+schoolname+"/"+schoolname+"-students.txt","a")
               student.write(new_name)
               student.write("\n")
               student.close()
-              log = open("schools/"+schoolname+"-log.txt","a")
-              log.write("Student",new_name,"has been added to the system at:",localtime,"EST;")
+              log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
+              log0004 = str(f"Student ({new_name}) has been added to the system at: {localtime} EST;")
+              log.write(log0004)
               log.write("\n")
               log.close()
               break  
@@ -141,12 +148,13 @@ class School():
   display_title_bar()
   while choice != 'q':    
       #names = open("people.txt").readlines()
+      localtime = datetime.datetime.now(pytz.timezone('US/Eastern'))
       global populationCount
-      populationCount = open("schools/"+schoolname+".txt").readlines()
+      populationCount = open("schools/"+schoolname+"/"+schoolname+".txt").readlines()
       global log123
-      log123 = open("schools/"+schoolname+".txt").readlines()
-      teacherCount = open("schools/"+schoolname+"-teachers.txt").readlines()
-      studentCount = open("schools/"+schoolname+"-students.txt").readlines()
+      log123 = open("schools/"+schoolname+"/"+schoolname+"-log.txt").readlines()
+      teacherCount = open("schools/"+schoolname+"/"+schoolname+"-teachers.txt").readlines()
+      studentCount = open("schools/"+schoolname+"/"+schoolname+"-students.txt").readlines()
       choice = get_user_choice()
       
       # Respond to the user's choice.
