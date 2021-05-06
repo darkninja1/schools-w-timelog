@@ -247,7 +247,13 @@ class School():
       elif choice == '5':
           print("Students: ",len(studentCount),)
       elif choice == '6':
-          show_log()               
+          show_log()
+      elif choice == '7':
+          administrator = input("Admin Passcode - ")
+          if (administrator == password[pass1]):
+            settings()
+          else:
+            print("\nInvalid Password\n")
       elif choice == 'q':
           print("\nThanks for your visit and support. Bye.")
       else:
