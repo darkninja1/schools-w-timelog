@@ -141,10 +141,12 @@ class School():
           delst = studentCount.index(admin_student+"\n")
           del studentCount[delst]
           newscount = open("schools/"+schoolname+"/"+schoolname+"-students.txt","w")
-          newscount.write(studentCount)
+          for line in studentCount:
+            newscount.write(line)
           newscount.close()
           newpcount = open("schools/"+schoolname+"/"+schoolname+".txt","w")
-          newpcount.write(populationCount)
+          for line in populationCount:
+            newpcount.write(line)
           newpcount.close()
           log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
           log0005 = str(f"Student ({admin_student}) has been removed from the system at: {localtime} EST;")
@@ -162,10 +164,12 @@ class School():
           delst = teacherCount.index(admin_teacher+"\n")
           del teacherCount[delst]
           newscount = open("schools/"+schoolname+"/"+schoolname+"-teachers.txt","w")
-          newscount.write(teacherCount)
+          for line in teacherCount:
+            newscount.write(line)
           newscount.close()
           newpcount = open("schools/"+schoolname+"/"+schoolname+".txt","w")
-          newpcount.write(populationCount)
+          for line in populationCount:
+            newpcount.write(line)
           newpcount.close()
           log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
           log0006 = str(f"Teacher ({admin_teacher}) has been removed from the system at: {localtime} EST;")
@@ -181,7 +185,8 @@ class School():
           new_pass = input("Please enter the new password - ")
           password[pass1] = (new_pass+"\n")
           password3 = open("password.txt","w")
-          password3.write(password)
+          for line in password:
+            password3.write(line)
           password3.close()
           print("\nNew Password has been set.\n")
           log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
