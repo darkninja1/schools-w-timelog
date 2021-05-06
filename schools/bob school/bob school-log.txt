@@ -1,6 +1,0 @@
-School bob school has was created at 2021-05-05 13:47:38.095389-04:00 EST;
-Student (bob joe) has been added to the system at: 2021-05-05 13:47:38.095389-04:00 EST;
-Student (bob billy) has been added to the system at: 2021-05-05 13:47:38.095389-04:00 EST;
-Teacher (bob jefferson) has been added to the system at: 2021-05-05 13:47:38.095389-04:00 EST;
-Teacher (bob thebuilder) has been added to the system at: 2021-05-05 13:47:38.095389-04:00 EST;
-School bob school has been accessed at 2021-05-05 13:50:26.877349-04:00 EST;
