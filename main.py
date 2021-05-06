@@ -41,7 +41,7 @@ while True:
               sys.exit()  
           else:
             print("\nInvalid Password\n")
-            sys.exit("invalid password")     
+            sys.exit("Invalid Password")     
         break
       elif schoolview == "n":
         print("ok exiting school menu...")
@@ -116,7 +116,29 @@ class School():
       print("\nSchool log\n")
       for line in log123:
           print(line.title())        
-          
+  def settings():
+    #settings (not yet operational)
+    print("\nWelcome to settings\n")
+    print("\n[1] Delete Student")
+    print("[2] Delete Teacher")
+    print("[3] Change Admin Password")
+    print("[q] Quit.")
+    admin_input = input("Admin ~ ")
+    if admin_input == "1":
+      admin_student = input("What student would you like to delete?: ").lower()
+      if (admin_student+"\n" in studentCount):
+        delst2 = populationCount.index(admin_student+"\n")
+        del populationCount[delst2]
+        delst = studentCount.index(admin_student+"\n")
+        del studentCount[delst]
+        log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
+        log0005 = str(f"Student ({admin_student}) has been removed from the system at: {localtime} EST;")
+        log.write(log0005)
+        log.write("\n")
+        log.close()
+      else:
+        print("\nInvalid Input\n")  
+
   def get_new_name():
       # Asks the user for a new name, and stores the name if we don't already
       #  know about this person.
@@ -170,8 +192,11 @@ class School():
       populationCount = open("schools/"+schoolname+"/"+schoolname+".txt").readlines()
       global log123
       log123 = open("schools/"+schoolname+"/"+schoolname+"-log.txt").readlines()
+      global teacherCount
       teacherCount = open("schools/"+schoolname+"/"+schoolname+"-teachers.txt").readlines()
+      global studentCount
       studentCount = open("schools/"+schoolname+"/"+schoolname+"-students.txt").readlines()
+
       choice = get_user_choice()
       
       # Respond to the user's choice.
