@@ -1,0 +1,6 @@
+School ssims has was created at 2021-05-06 17:06:17.733194-04:00 EST;
+Teacher (mr. leavy) has been added to the system at: 2021-05-06 17:06:17.733194-04:00 EST;
+Student (willy thekid) has been added to the system at: 2021-05-06 17:06:17.733194-04:00 EST;
+School ssims has been accessed at 2021-05-06 17:07:47.994101-04:00 EST;
+New system password has been set by admin at: 2021-05-06 17:07:47.994101-04:00 EST;
+School ssims has been accessed at 2021-05-06 17:08:32.552282-04:00 EST;
