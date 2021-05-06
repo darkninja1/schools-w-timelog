@@ -140,11 +140,18 @@ class School():
           del populationCount[delst2]
           delst = studentCount.index(admin_student+"\n")
           del studentCount[delst]
+          newscount = open("schools/"+schoolname+"/"+schoolname+"-students.txt","w")
+          newscount.write(studentCount)
+          newscount.close()
+          newpcount = open("schools/"+schoolname+"/"+schoolname+".txt","w")
+          newpcount.write(populationCount)
+          newpcount.close()
           log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
           log0005 = str(f"Student ({admin_student}) has been removed from the system at: {localtime} EST;")
           log.write(log0005)
           log.write("\n")
           log.close()
+          print(log0005)
         else:
           print(f"\nStudent {admin_student} does not exist.\n")
       elif admin_input == "2":
@@ -154,11 +161,18 @@ class School():
           del populationCount[delst2]
           delst = teacherCount.index(admin_teacher+"\n")
           del teacherCount[delst]
+          newscount = open("schools/"+schoolname+"/"+schoolname+"-teachers.txt","w")
+          newscount.write(teacherCount)
+          newscount.close()
+          newpcount = open("schools/"+schoolname+"/"+schoolname+".txt","w")
+          newpcount.write(populationCount)
+          newpcount.close()
           log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
           log0006 = str(f"Teacher ({admin_teacher}) has been removed from the system at: {localtime} EST;")
           log.write(log0006)
           log.write("\n")
           log.close()
+          print(log0006)
         else:
           print(f"\nTeacher {admin_teacher} does not exist.\n")   
       elif admin_input == "3":
