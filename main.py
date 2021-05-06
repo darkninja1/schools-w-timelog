@@ -179,7 +179,10 @@ class School():
         current_pass = input("Please enter the current password - ")
         if (current_pass+"\n" == password[pass1]):
           new_pass = input("Please enter the new password - ")
-          password[pass1] = new_pass+"\n"
+          password[pass1] = (new_pass+"\n")
+          password3 = open("password.txt","w")
+          password3.write(password)
+          password3.close()
           print("\nNew Password has been set.\n")
           log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
           log0007 = str(f"New system password has been set by admin at: {localtime} EST;")
