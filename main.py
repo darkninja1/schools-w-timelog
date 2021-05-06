@@ -13,6 +13,7 @@ print(localtime,"EST")
 while True:
   localtime = datetime.datetime.now(pytz.timezone('US/Eastern'))
   schools = open("schools.txt").readlines()
+  global password
   password = open("password.txt").readlines()
   global schoolname
   #why global
@@ -28,6 +29,7 @@ while True:
           pass2 = input("Enter School Administrator password - ")
           if (pass2+"\n" in password):
             user1 = schools.index(schoolname+"\n")
+            global pass1
             pass1 = password.index(pass2+"\n")
             if (user1 == pass1):
               log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
@@ -118,26 +120,59 @@ class School():
           print(line.title())        
   def settings():
     #settings (not yet operational)
-    print("\nWelcome to settings\n")
-    print("\n[1] Delete Student")
-    print("[2] Delete Teacher")
-    print("[3] Change Admin Password")
-    print("[q] Quit.")
-    admin_input = input("Admin ~ ")
-    if admin_input == "1":
-      admin_student = input("What student would you like to delete?: ").lower()
-      if (admin_student+"\n" in studentCount):
-        delst2 = populationCount.index(admin_student+"\n")
-        del populationCount[delst2]
-        delst = studentCount.index(admin_student+"\n")
-        del studentCount[delst]
-        log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
-        log0005 = str(f"Student ({admin_student}) has been removed from the system at: {localtime} EST;")
-        log.write(log0005)
-        log.write("\n")
-        log.close()
+    while True:
+      # Clears the terminal screen, and displays a title bar.
+      os.system('clear')
+                
+      print("\t**********************************************")
+      print(f"\t   ***    Welcome to {schoolname.title()} Administrator! ***")
+      print("\t**********************************************")
+      print("\nWelcome to settings\n")
+      print("\n[1] Delete Student")
+      print("[2] Delete Teacher")
+      print("[3] Change Admin Password")
+      print("[q] Quit.")
+      admin_input = input("Admin ~ ")
+      if admin_input == "1":
+        admin_student = input("What student would you like to delete?: ").lower()
+        if (admin_student+"\n" in studentCount):
+          delst2 = populationCount.index(admin_student+"\n")
+          del populationCount[delst2]
+          delst = studentCount.index(admin_student+"\n")
+          del studentCount[delst]
+          log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
+          log0005 = str(f"Student ({admin_student}) has been removed from the system at: {localtime} EST;")
+          log.write(log0005)
+          log.write("\n")
+          log.close()
+        else:
+          print(f"\nStudent {admin_student} does not exist.\n")
+      elif admin_input == "2":
+        admin_teacher = input("What teacher would you like to delete?: ").lower()
+        if (admin_teacher+"\n" in teacherCount):
+          delst2 = populationCount.index(admin_teacher+"\n")
+          del populationCount[delst2]
+          delst = teacherCount.index(admin_teacher+"\n")
+          del teacherCount[delst]
+          log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
+          log0005 = str(f"Teacher ({admin_teacher}) has been removed from the system at: {localtime} EST;")
+          log.write(log0005)
+          log.write("\n")
+          log.close()
+        else:
+          print(f"\nTeacher {admin_teacher} does not exist.\n")   
+      elif admin_input == "3":
+        current_pass = input("Please enter the current password - ")
+        if (current_pass == password[pass1]):
+          new_pass = input("Please enter the new password - ")
+          password[pass1] = new_pass
+          print("\nNew Password has been set.\n")
+        else:
+          print("Invalid Password")  
+      elif admin_input == "q":
+        break     
       else:
-        print("\nInvalid Input\n")  
+        print("\nInvalid Input\n")      
 
   def get_new_name():
       # Asks the user for a new name, and stores the name if we don't already
