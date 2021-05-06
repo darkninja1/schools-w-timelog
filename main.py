@@ -26,7 +26,7 @@ while True:
       if schoolview == "y":
         while True:
           pass2 = input("Enter School Administrator password - ")
-          if (pass2 in password):
+          if (pass2+"\n" in password):
             user1 = schools.index(schoolname+"\n")
             pass1 = password.index(pass2+"\n")
             if (user1 == pass1):
@@ -41,7 +41,7 @@ while True:
               sys.exit()  
           else:
             print("\nInvalid Password\n")
-            sys.exit()     
+            sys.exit("invalid password")     
         break
       elif schoolview == "n":
         print("ok exiting school menu...")
