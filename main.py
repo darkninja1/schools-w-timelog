@@ -104,6 +104,7 @@ class School():
       print("[4] Population of teacher body.")
       print("[5] Population of student body.")
       print("[6] View Log")
+      print("[7] Administrator")
       print("[q] Quit.")
       
       return input("What would you like to do? ")
