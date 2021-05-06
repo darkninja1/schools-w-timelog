@@ -80,6 +80,14 @@ while True:
     log.write("\n")
     log.close()
     print("\n...School Generated...\n")
+    print("\nWe recommend you stop the program and restart so that you can use the administrator function.\n")
+    num1 = 5
+    for i in range(5):
+      num1 = num1 - 1
+      end = str(num1)
+      print(end)
+      time.sleep(1)
+    #time.sleep(5)
     break
 
 
