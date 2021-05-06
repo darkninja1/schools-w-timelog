@@ -155,8 +155,8 @@ class School():
           delst = teacherCount.index(admin_teacher+"\n")
           del teacherCount[delst]
           log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
-          log0005 = str(f"Teacher ({admin_teacher}) has been removed from the system at: {localtime} EST;")
-          log.write(log0005)
+          log0006 = str(f"Teacher ({admin_teacher}) has been removed from the system at: {localtime} EST;")
+          log.write(log0006)
           log.write("\n")
           log.close()
         else:
@@ -167,6 +167,11 @@ class School():
           new_pass = input("Please enter the new password - ")
           password[pass1] = new_pass
           print("\nNew Password has been set.\n")
+          log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
+          log0007 = str(f"New system password has been set by admin at: {localtime} EST;")
+          log.write(log0007)
+          log.write("\n")
+          log.close()
         else:
           print("Invalid Password")  
       elif admin_input == "q":
