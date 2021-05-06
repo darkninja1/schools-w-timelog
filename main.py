@@ -163,9 +163,9 @@ class School():
           print(f"\nTeacher {admin_teacher} does not exist.\n")   
       elif admin_input == "3":
         current_pass = input("Please enter the current password - ")
-        if (current_pass == password[pass1]):
+        if (current_pass+"\n" == password[pass1]):
           new_pass = input("Please enter the new password - ")
-          password[pass1] = new_pass
+          password[pass1] = new_pass+"\n"
           print("\nNew Password has been set.\n")
           log = open("schools/"+schoolname+"/"+schoolname+"-log.txt","a")
           log0007 = str(f"New system password has been set by admin at: {localtime} EST;")
@@ -255,7 +255,7 @@ class School():
           show_log()
       elif choice == '7':
           administrator = input("Admin Passcode - ")
-          if (administrator == password[pass1]):
+          if (administrator+"\n" == password[pass1]):
             settings()
           else:
             print("\nInvalid Password\n")
