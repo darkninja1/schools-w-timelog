@@ -81,6 +81,7 @@ while True:
     log.close()
     print("\n...School Generated...\n")
     print("\nWe recommend you stop the program and restart so that you can use the administrator function.\n")
+    print("\nIn ten seconds this message will dissapear and school will be opened without admin priv.\n")
     num1 = 10
     for i in range(10):
       num1 = num1 - 1
