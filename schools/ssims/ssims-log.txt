@@ -4,3 +4,10 @@ Student (willy thekid) has been added to the system at: 2021-05-06 17:06:17.7331
 School ssims has been accessed at 2021-05-06 17:07:47.994101-04:00 EST;
 New system password has been set by admin at: 2021-05-06 17:07:47.994101-04:00 EST;
 School ssims has been accessed at 2021-05-06 17:08:32.552282-04:00 EST;
+School ssims has been accessed at 2021-05-06 19:54:04.089278-04:00 EST;
+Student (dominik honzak) has been added to the system at: 2021-05-06 19:54:04.089278-04:00 EST;
+Teacher (ms. green) has been added to the system at: 2021-05-06 19:54:04.089278-04:00 EST;
+Teacher (mr. wambach) has been added to the system at: 2021-05-06 19:54:04.089278-04:00 EST;
+Student (anthony) has been added to the system at: 2021-05-06 19:54:04.089278-04:00 EST;
+New system password has been set by admin at: 2021-05-06 19:54:04.089278-04:00 EST;
+Student (anthony) has been removed from the system at: 2021-05-06 19:54:04.089278-04:00 EST;
