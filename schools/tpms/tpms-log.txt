@@ -1,1 +1,9 @@
 School tpms has was created at 2021-05-06 17:18:35.862530-04:00 EST;
+School tpms has been accessed at 2021-05-08 20:31:29.702423-04:00 EST;
+Student (cedar bremner) has been added to the system at: 2021-05-08 20:31:29.702423-04:00 EST;
+Student (dominik honzak) has been added to the system at: 2021-05-08 20:31:29.702423-04:00 EST;
+Teacher (dr. taliff) has been added to the system at: 2021-05-08 20:31:29.702423-04:00 EST;
+Teacher (ms. simons) has been added to the system at: 2021-05-08 20:31:29.702423-04:00 EST;
+Student (random person) has been added to the system at: 2021-05-08 20:31:29.702423-04:00 EST;
+Student (random person) has been added to the system at: 2021-05-08 20:31:29.702423-04:00 EST;
+Student (random person) has been removed from the system at: 2021-05-08 20:31:29.702423-04:00 EST;
