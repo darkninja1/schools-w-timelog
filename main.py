@@ -215,7 +215,7 @@ class School():
       # Asks the user for a new name, and stores the name if we don't already
       #  know about this person.
       new_name = input("\nPerson's Name: ").lower()
-      if new_name + "\n" in schoolname:
+      if new_name + "\n" in populationCount:
           print(f"\n%s is already in the {schoolname} database." % new_name.title())
       else:
           file = open("schools/"+schoolname+"/"+schoolname+".txt","a")
